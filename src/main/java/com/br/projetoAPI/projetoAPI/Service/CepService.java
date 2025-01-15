@@ -45,6 +45,11 @@ public class CepService {
                 CepResponse erroResposta = new CepResponse();
                 erroResposta.setCep("CEP inválido");
                 return erroResposta;
+            }else if(e.getStatusCode().is5xxServerError()){
+                // Retornar uma resposta de erro personalizada
+                CepResponse erroResposta = new CepResponse();
+                erroResposta.setCep("Erro no servidor");
+                return erroResposta;
             }
             throw e; // Re-throw other exceptions
         }
