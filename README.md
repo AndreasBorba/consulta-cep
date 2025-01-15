@@ -1,7 +1,7 @@
-# Projeto API de Consulta de CEP
+# Projeto Consulta de CEP API
 
 ## Descrição
-Este projeto foi desenvolvido como parte de um processo seletivo. O objetivo é criar uma interface web que consome uma API externa para consulta de CEPs. Os dados retornados pela API são validados e, dependendo do resultado, o usuário é direcionado para uma página específica que exibe as informações do endereço ou uma mensagem de erro. 
+Este projeto foi desenvolvido como parte de um processo seletivo. O objetivo é criar uma interface web que consome uma API externa para consulta de CEP. Os dados retornados pela API são validados e, dependendo do resultado, o usuário é direcionado para uma página específica que exibe as informações do endereço ou uma mensagem de erro. 
 
 ## Tecnologias Utilizadas
 - **Spring Boot**: Framework para criar aplicações Java.
