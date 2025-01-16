@@ -1,5 +1,6 @@
 package com.br.projetoAPI.projetoAPI.integration;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -36,5 +37,14 @@ public class CepControllerIntegrationTest {
         mockMvc.perform(get("/consultar-cep").param("cep", cep))
                 .andExpect(status().isOk())
                 .andExpect(view().name("erro"));
+    }
+
+    @Test
+    @DisplayName("Testa a exclusão de um CEP inexistente")
+    public void testDeleteCep() throws Exception {
+        Long id = 60000000L;
+
+        mockMvc.perform(delete("/ceps/{id}", id))
+                .andExpect(status().isNotFound());
     }
 }

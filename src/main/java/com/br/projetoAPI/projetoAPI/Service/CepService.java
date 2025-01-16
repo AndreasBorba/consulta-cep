@@ -1,10 +1,12 @@
 package com.br.projetoAPI.projetoAPI.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -56,8 +58,21 @@ public class CepService {
     public List<Cep> getAllCeps() {
         return cepRepository.findAll();
     }
-
+    @Transactional
     public void deleteCepById(Long id) {
+        Optional<Cep> cep = cepRepository.findById(id);
+        if (!cep.isPresent()) {
+            throw new HttpClientErrorException(HttpStatus.NOT_FOUND, "CEP não encontrado com id: " + id);
+        }
         cepRepository.deleteById(id);
+    }
+
+    public boolean existsById(Long id) {
+        Optional<Cep> cep = cepRepository.findById(id);
+        if (cep.isPresent()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

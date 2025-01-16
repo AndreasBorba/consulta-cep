@@ -49,14 +49,30 @@
                     <td th:text="${cep.id}"></td>
                     <td th:text="${cep.cep}"></td>
                     <td>
-                        <form th:action="@{/ceps/{id}(id=${cep.id})}" method="post" style="display:inline;">
-                            <button type="submit" class="btn btn-outline-danger">Remover</button>
-                        </form>
+                        <button type="button" class="btn btn-outline-danger" th:onclick="'deleteCep(' + ${cep.id} + ')'">Remover</button>
                     </td>    
                 </tr>
             </tbody>
         </table>
     </div>
+    <script>
+        function deleteCep(id) {
+            fetch(`/ceps/${id}`, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    response.text().then(text => alert(text));
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao remover o CEP');
+            });
+        }
+    </script>
 </body>
 
 </html>
