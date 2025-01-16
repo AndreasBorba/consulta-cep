@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Resultado</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <meta charset="UTF-8">
-</head>
-<body>
-<!--NAVBAR-->
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Projeto API</title>
+  <title>Resultado</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <meta charset="UTF-8">
 </head>
@@ -19,78 +10,103 @@
 <body>
   <!--NAVBAR-->
   <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+  <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-  <title>Projeto API</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <meta charset="UTF-8">
-</head>
+  <head>
+    <title>Projeto API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+  </head>
 
-<body>
-  <!--NAVBAR-->
-  <nav class="navbar navbar-expand-lg bg-dark bg-body-tertiary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">AcheAqui</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active bg-dark bg-body-tertiary" aria-current="page" href="/listar-ceps">Registro de consultas</a>
-          </li>
-        </ul>
-      </div>
-      <div class="collapse navbar-collapse nav justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active border border-secondary rounded" aria-current="page" href="/sobre">Sobre o projeto</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!--CONTEÚDO DA PÁGINA-->
-  <div class="container" style="padding-top: 10px;">
-    <div style="padding-top: 40px;">
-    <div class="card">
-      <div class="card-header font-monospace">
-        <h3>O projeto</h3>
-      </div>
-      <div class="card-body font-monospace">
-        O projeto foi desenvolvido por: Andreas Borba. <br><br>
-        <p>
-          O objetivo deste projeto é fornecer informações sobre CEPs utilizando a API da Brasil API. <br>
-          As tecnologias utilizadas no desenvolvimento incluem Java, Spring Boot, Thymeleaf, HTML, CSS, Bootstrap e JavaScript. <br>
-          A consulta é realizada com base no CEP fornecido pelo usuário, e os resultados possíveis são: <br>
-          1. <strong>Sucesso:</strong> O CEP foi encontrado e as informações correspondentes foram exibidas. <br>
-          2. <strong>Falha:</strong> O CEP não foi encontrado. <br>
-        </p>
-      </div>
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active border border-black border-3 border-opacity-25 rounded" style="padding: 10px;">
-            <img th:src="@{/images/pageinicial.png}" class="d-block w-100" alt="Página Inicial" style="height: 350px;">
+  <body>
+    <!--NAVBAR-->
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+      <title>Projeto API</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <meta charset="UTF-8">
+    </head>
+
+    <body>
+      <!--NAVBAR-->
+      <nav class="navbar navbar-expand-lg bg-dark bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">AcheAqui</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active bg-dark bg-body-tertiary" aria-current="page" href="/listar-ceps">Registro de
+                  consultas</a>
+              </li>
+            </ul>
           </div>
-          <div class="carousel-item border border-black border-3 border-opacity-25 rounded" style="padding: 10px;">
-            <img th:src="@{/images/sucessopage.png}" class="d-block w-100" alt="Sucesso na consulta" style="height: 350px;">
-          </div>
-          <div class="carousel-item border border-black border-3 border-opacity-25 rounded" style="padding: 10px;">
-            <img th:src="@{/images/falhapage.png}" class="d-block w-100" alt="Falha na consulta" style="height: 350px;">
+          <div class="collapse navbar-collapse nav justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active border border-secondary rounded" aria-current="page" href="/sobre">Sobre o
+                projeto</a>
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      </nav>
+      <!--CONTEÚDO DA PÁGINA-->
+      <div class="container" style="padding-top: 10px;">
+        <div style="padding-top: 40px;">
+          <div class="card">
+            <div class="card-header font-monospace">
+              <h3>O projeto</h3>
+            </div>
+            <div class="card-body font-monospace">
+              O projeto foi desenvolvido por: Andreas Borba. <br><br>
+              <p>
+                O objetivo deste projeto é fornecer informações sobre CEPs utilizando a API da Brasil API. <br>
+                As tecnologias utilizadas no desenvolvimento incluem Java, Spring Boot, Thymeleaf, HTML, CSS, Bootstrap
+                e JavaScript. <br>
+                A consulta é realizada com base no CEP fornecido pelo usuário, e os resultados possíveis são: <br>
+                1. <strong>Sucesso:</strong> O CEP foi encontrado e as informações correspondentes foram exibidas. <br>
+                2. <strong>Falha:</strong> O CEP não foi encontrado. <br>
+              </p>
+            </div>
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active border border-black border-3 border-opacity-25 rounded"
+                  style="padding: 10px;">
+                  <img th:src="@{/images/pageinicial.png}" class="d-block w-100" alt="Página Inicial"
+                    style="height: 350px;">
+                </div>
+                <div class="carousel-item border border-black border-3 border-opacity-25 rounded"
+                  style="padding: 10px;">
+                  <img th:src="@{/images/sucessopage.png}" class="d-block w-100" alt="Sucesso na consulta"
+                    style="height: 350px;">
+                </div>
+                <div class="carousel-item border border-black border-3 border-opacity-25 rounded"
+                  style="padding: 10px;">
+                  <img th:src="@{/images/falhapage.png}" class="d-block w-100" alt="Falha na consulta"
+                    style="height: 350px;">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    </body>
+
+    </html>
