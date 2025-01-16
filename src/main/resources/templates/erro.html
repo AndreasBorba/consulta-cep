@@ -52,12 +52,12 @@
         <hr>
       </div>
       <div th:if="${resposta.cep == 'CEP inválido'}">
-        <p>CEP não encontrado ou inválido</p>
+        <p>- CEP não encontrado ou inválido</p>
       </div>
       <div th:if="${resposta.cep == 'Erro no servidor'}">
-        <p>Erro no servidor</p>
+        <p>- Erro no servidor</p>
       </div>
-      <div th:if="${resposta.cep != 'CEP inválido'}">
+      <div th:if="${resposta.cep != 'CEP inválido' && resposta.cep != 'Erro no servidor'}">
         <p th:if="${resposta.cep != null && resposta.cep != ''}" th:text="'CEP: ' + ${resposta.cep}"></p>
         <p th:if="${resposta.state != null && resposta.state != ''}" th:text="'Estado: ' + ${resposta.state}"></p>
         <p th:if="${resposta.city != null && resposta.city != ''}" th:text="'Cidade: ' + ${resposta.city}"></p>

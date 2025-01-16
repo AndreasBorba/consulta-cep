@@ -21,7 +21,7 @@ public class CepController {
         //Chama o serviço para consultar o CEP
         CepResponse resposta = cepService.consultarCep(cep);
         model.addAttribute("resposta", resposta);
-        if(resposta.getCep().equals("CEP inválido")){
+        if(resposta.getCep().equals("CEP inválido") || resposta.getCep().equals("Erro no servidor")){
             return "erro";
         }else{
             return "resultado";
