@@ -3,6 +3,8 @@ package com.br.projetoAPI.projetoAPI.integration;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,6 +19,7 @@ public class CepControllerIntegrationTest {
     private MockMvc mockMvc;
 
     @Test
+    @DisplayName("Testa a consulta de um CEP válido")
     public void testConsultarCepValido() throws Exception {
         String cep = "01001000";
 
@@ -26,6 +29,7 @@ public class CepControllerIntegrationTest {
     }
 
     @Test
+    @DisplayName("Testa a consulta de um CEP inválido")
     public void testConsultarCepInvalido() throws Exception {
         String cep = "00000000";
 

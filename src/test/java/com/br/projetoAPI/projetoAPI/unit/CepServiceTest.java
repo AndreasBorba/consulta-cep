@@ -2,6 +2,8 @@ package com.br.projetoAPI.projetoAPI.unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import com.br.projetoAPI.projetoAPI.Model.CepResponse;
 import com.br.projetoAPI.projetoAPI.Service.CepService;
@@ -19,16 +21,17 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootTest
 public class CepServiceTest {
     
-    @Mock
-    private RestTemplate restTemplate;
-
     @InjectMocks
     private CepService cepService;
+
+    @Mock
+    private RestTemplate restTemplate;
     
     @Mock
     private DatabaseService databaseService;
 
     @Test
+    @DisplayName("Testa a consulta de um CEP válido")
     public void testConsultarCepValido() {
         String cep = "01001000";
         CepResponse mockResponse = new CepResponse();
@@ -46,6 +49,7 @@ public class CepServiceTest {
     }
 
     @Test
+    @DisplayName("Testa a consulta de um CEP inválido")
     public void testConsultarCepInvalido() {
         String cep = "00000000";
 
@@ -57,6 +61,7 @@ public class CepServiceTest {
     }
 
     @Test
+    @DisplayName("Testa a consulta de um CEP inválido com letras")
     public void testConsultarCepInvalidoComLetras() {
         String cep = "ABCDEFGH";
 
@@ -68,6 +73,7 @@ public class CepServiceTest {
     }
 
     @Test
+    @DisplayName("Testa a consulta de um CEP com erro no servidor")
     public void testConsultarCepErroServidor() {
         String cep = "00000000";
 
