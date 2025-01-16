@@ -41,12 +41,18 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">CEP</th>
+                    <th scope="col">Ação</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="cep : ${ceps}">
                     <td th:text="${cep.id}"></td>
                     <td th:text="${cep.cep}"></td>
+                    <td>
+                        <form th:action="@{/ceps/{id}(id=${cep.id})}" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-outline-danger">Remover</button>
+                        </form>
+                    </td>    
                 </tr>
             </tbody>
         </table>

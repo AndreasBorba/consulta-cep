@@ -56,4 +56,8 @@ public class CepService {
     public List<Cep> getAllCeps() {
         return cepRepository.findAll();
     }
+
+    public void deleteCepById(Long id) {
+        cepRepository.deleteById(id);
+    }
 }
