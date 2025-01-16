@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import com.br.projetoAPI.projetoAPI.Model.Cep;
@@ -39,20 +40,17 @@ public class CepService {
             databaseService.saveCep(cep);
             return cepResponse;
         } catch (HttpClientErrorException e) {
-            // Tratar o erro de requisição HTTP
             if (e.getStatusCode().is4xxClientError()) {
-                // Retornar uma resposta de erro personalizada
                 CepResponse erroResposta = new CepResponse();
                 erroResposta.setCep("CEP inválido");
                 return erroResposta;
-            }else if(e.getStatusCode().is5xxServerError()){
-                // Retornar uma resposta de erro personalizada
-                CepResponse erroResposta = new CepResponse();
-                erroResposta.setCep("Erro no servidor");
-                return erroResposta;
             }
-            throw e; // Re-throw other exceptions
+        } catch (HttpServerErrorException e) {
+            CepResponse erroResposta = new CepResponse();
+            erroResposta.setCep("Erro no servidor");
+            return erroResposta;
         }
+        return null;
     }
 
     public List<Cep> getAllCeps() {

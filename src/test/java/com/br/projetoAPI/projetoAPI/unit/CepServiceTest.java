@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootTest
@@ -64,5 +65,16 @@ public class CepServiceTest {
 
         CepResponse resposta = cepService.consultarCep(cep);
         assertEquals("CEP inválido", resposta.getCep());
+    }
+
+    @Test
+    public void testConsultarCepErroServidor() {
+        String cep = "00000000";
+
+        when(restTemplate.getForEntity("https://brasilapi.com.br/api/cep/v2/" + cep, CepResponse.class))
+                .thenThrow(new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR));
+
+        CepResponse resposta = cepService.consultarCep(cep);
+        assertEquals("Erro no servidor", resposta.getCep());
     }
 }
