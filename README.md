@@ -32,3 +32,33 @@ Agora, com uma requisição bem-sucedida, o CEP consultado é registrado em um b
 ## Testes
 - **Testes Unitários**
 - **Testes de Integração**
+
+## Como Executar o Projeto
+
+1. **Clone o repositório e acesse o projeto**:
+```
+git clone https://github.com/AndreasBorba/consulta-cep.git
+
+cd projetoAPI
+```
+2. **Inicie o contêiner Docker com o MySQL:**:
+```
+docker-compose up
+```
+3. **Execute a aplicação Spring Boot:**:
+```
+mvn spring-boot:run
+```
+4. **Acesse a aplicação:**:
+- http://localhost:8081
+
+5. **Executando os Testes:**
+```
+mvn test
+```
+```
+mvn -Dtest=nomeClasse#nomeMetodo test
+```
+
+
+
