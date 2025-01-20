@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "fdddcb0a-5390-406b-808f-52fff6e8a845",
+		"name": "Projeto Consulta de CEP API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37090163"
+	},
+	"item": [
+		{
+			"name": "Validação sucesso 2xx",
+			"item": [
+				{
+					"name": "Consulta CEP",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/:cep",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								":cep"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cep",
+									"value": "01001000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Validação erro 4xx",
+			"item": [
+				{
+					"name": "Consulta CEP Caractere Qnt Menor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/:cep",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								":cep"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cep",
+									"value": "0100100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta CEP Caractere  Qnt Maior",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/:cep",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								":cep"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cep",
+									"value": "010010000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta CEP Inválido",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/:cep",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								":cep"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cep",
+									"value": "00000000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
