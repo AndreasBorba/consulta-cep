@@ -38,7 +38,8 @@ Agora, com uma requisição bem-sucedida, o CEP consultado é registrado em um b
 1. **Clone o repositório e acesse o projeto**:
 ```
 git clone https://github.com/AndreasBorba/consulta-cep.git
-
+```
+```
 cd projetoAPI
 ```
 2. **Inicie o contêiner Docker com o MySQL:**:
