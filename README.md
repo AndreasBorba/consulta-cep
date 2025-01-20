@@ -6,6 +6,9 @@ Este projeto foi desenvolvido como parte de um processo seletivo. O objetivo é 
 [Atualização][15-01-2025] <br>
 Agora, com uma requisição bem-sucedida, o CEP consultado é registrado em um banco de dados MySQL contido em um contêiner Docker. Os CEPs registrados podem ser visualizados em uma página separada.
 
+[Atualização][19-01-2025] <br>
+O projeto agora inclui testes automatizados utilizando RestAssured para validar as respostas da API e garantir a integridade dos dados retornados.
+
 ## Tecnologias Utilizadas
 - **Spring Boot**: Framework para criar aplicações Java.
 - **JUnit 5**: Framework de testes para Java.
@@ -15,6 +18,7 @@ Agora, com uma requisição bem-sucedida, o CEP consultado é registrado em um b
 - **Bootstrap**: Biblioteca de front-end para criação de interfaces de usuário responsivas.
 - **Docker**: Plataforma para criar, implantar e executar contêineres.
 - **MySQL**: Sistema de gerenciamento de banco de dados relacional.
+- **RestAssured**: Biblioteca para testes de APIs REST, utilizada para validar as respostas da API.
 
 ## Estrutura do Projeto
 - **Controller**: Lida com as requisições HTTP.
