@@ -1,14 +1,23 @@
 package com.br.projetoAPI.projetoAPI.restassured;
 
 import static org.hamcrest.Matchers.equalTo;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 //import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 
 public class BrasilApiRestAssuredTest {
     private static final String BASE_URL = "https://brasilapi.com.br/api/cep/v2/";
+
+    @BeforeAll
+    public static void setUp() {
+        RestAssured.useRelaxedHTTPSValidation();
+    }
 
     @Test
     @DisplayName("Testa a consulta de um CEP válido na API Brasil API")
