@@ -39,22 +39,22 @@ O projeto agora inclui testes automatizados utilizando RestAssured para validar 
 
 ## Como Executar o Projeto
 
-1. **Clone o repositório e acesse o projeto**:
+1. **Clone o repositório e acesse o projeto:**
 ```
 git clone https://github.com/AndreasBorba/consulta-cep.git
 ```
 ```
 cd projetoAPI
 ```
-2. **Inicie o contêiner Docker com o MySQL:**:
+2. **Inicie o contêiner Docker com o MySQL:**
 ```
 docker-compose up
 ```
-3. **Execute a aplicação Spring Boot:**:
+3. **Execute a aplicação Spring Boot:**
 ```
 mvn spring-boot:run
 ```
-4. **Acesse a aplicação:**:
+4. **Acesse a aplicação:**
 - http://localhost:8081
 
 5. **Executando os Testes:**
